@@ -1,0 +1,28 @@
+# Pasta de imagens base - NÃO enviar para o repositório
+base/
+
+# Logs
+*.log
+firebase-debug.log
+npm-debug.log*
+
+# Dependências
+node_modules/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ambiente virtual / Python
+__pycache__/
+*.pyc
+.env
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# Build / dist
+dist/
+build/
+*.tmp

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art Concept - Transferência de Estilo</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+</head>
+<body>
+
+  <!-- Barra central: upload -->
+  <div class="central-bar">
+    <div class="drop-zone" id="dropZone">
+      <div class="drop-icon">📷</div>
+      <p class="drop-text">Clique ou arraste uma imagem aqui</p>
+      <input type="file" id="fileInput" accept="image/*" hidden>
+    </div>
+  </div>
+
+  <!-- Demonstrativo: original acima, estilizada abaixo -->
+  <section class="demo-section">
+    <div class="demo-header">
+      <h2 class="section-title">Demonstrativo</h2>
+      <div class="demo-actions">
+        <button class="btn-reset" id="btnReset">Trocar imagem</button>
+      </div>
+    </div>
+
+    <div class="demo-pair">
+      <div class="demo-half original-side">
+        <div class="half-label">Imagem Original</div>
+        <div class="half-frame" id="frameOriginal">
+          <img id="originalImage" alt="Original">
+        </div>
+      </div>
+
+      <div class="demo-arrow">→</div>
+
+      <div class="demo-half styled-side">
+        <div class="half-label">Estilo Aplicado</div>
+        <div class="half-frame" id="frameStyled">
+          <canvas id="resultCanvas"></canvas>
+        </div>
+        <div class="styled-controls">
+          <span class="styled-label" id="resultStyleName">Nenhum estilo selecionado</span>
+          <button class="btn-download" id="btnDownload">⬇ Baixar imagem estilizada</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeria de imagens da base -->
+  <section class="gallery-section">
+    <h2 class="section-title">Imagens da Base</h2>
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- Imagens injetadas via JS -->
+    </div>
+  </section>
+
+  <!-- Seleção de estilos -->
+  <section class="styles-section">
+    <h2 class="section-title">Escolha o estilo artístico</h2>
+    <div class="styles-grid" id="stylesGrid">
+      <!-- Estilos injetados via JS -->
+    </div>
+  </section>
+
+  <!-- Overlay de processamento em background -->
+  <div class="bg-overlay" id="bgOverlay" hidden>
+    <div class="bg-card">
+      <div class="bg-spinner"></div>
+      <div class="bg-text" id="bgText">Processando em background...</div>
+      <div class="bg-mem" id="bgMem">RAM estimada: &lt; 500 MB</div>
+    </div>
+  </div>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

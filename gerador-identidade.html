@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art Concept - Gerador de Identidade Visual</title>
+  <link rel="stylesheet" href="assets/css/gerador.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <header class="header">
+      <h1>Art Concept <span class="badge">Gerador Identidade Visual</span></h1>
+      <p class="subtitle">Nova arte baseada na identidade extraída da pasta base</p>
+    </header>
+
+    <div class="controls">
+      <div class="control-group">
+        <label class="control-label">Tipo de arte</label>
+        <select id="tipoArte" class="control-select">
+          <option value="geometrico">Geométrico Abstrato</option>
+          <option value="organico">Formas Orgânicas</option>
+          <option value="linhas">Linhas e Pontos</option>
+          <option value="gradientes">Camadas de Gradiente</option>
+          <option value="misturado">Misturado (Todos)</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">Quantidade de imagens</label>
+        <select id="qtdImagens" class="control-select">
+          <option value="1">1 imagem</option>
+          <option value="3">3 imagens</option>
+          <option value="5">5 imagens</option>
+          <option value="10">10 imagens</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <button id="btnGerar" class="btn-gerar">Gerar Imagens</button>
+      </div>
+    </div>
+
+    <div class="info-panel">
+      <h3>Identidade Visual Extraída (Base)</h3>
+      <div class="palette">
+        <div class="swatch" style="background:#000000"></div>
+        <div class="swatch" style="background:#e5ddd1"></div>
+        <div class="swatch" style="background:#e7e0d2"></div>
+        <div class="swatch" style="background:#e6ded4"></div>
+        <div class="swatch" style="background:#e3d7c5"></div>
+        <div class="swatch" style="background:#e2d8c9"></div>
+      </div>
+      <ul class="specs">
+        <li><strong>Formato:</strong> 1170 × 2532 px (9:16 retrato)</li>
+        <li><strong>Fundo:</strong> #000000 (preto puro)</li>
+        <li><strong>Elementos:</strong> Tons bege/areia/creme</li>
+        <li><strong>Contraste:</strong> Alto</li>
+        <li><strong>Estética:</strong> Moody, minimalista, conceitual</li>
+      </ul>
+    </div>
+
+    <div class="gallery" id="gallery">
+      <!-- Imagens geradas aparecem aqui -->
+    </div>
+  </div>
+
+  <script src="assets/js/gerador.js"></script>
+</body>
+</html>

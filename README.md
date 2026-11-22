@@ -1,42 +1,19 @@
 # Art Concept
 
-> Ferramentas leves de geração e transferência de estilo artístico, baseadas na identidade visual extraída da pasta `base/`.
+Ferramentas leves de geração e transferência de estilo artístico, baseadas na identidade visual extraída da pasta `base/`.
 
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)](https://github.com)
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)](https://developer.mozilla.org/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/)
 [![anime.js](https://img.shields.io/badge/anime.js-3.2.2-purple)](https://animejs.com/)
-[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Pillow](https://img.shields.io/badge/Pillow-13.0.0-red)](https://python-pillow.org/)
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](Awesome-Portrait-Style-Transfer/LICENSE)
 
 </div>
-
----
-
-## 🎨 Sobre o Projeto
-
-O **Art Concept** é um conjunto de ferramentas frontend para criação, estilização e geração de imagens conceituais. O projeto parte da análise da identidade visual das imagens da pasta `base/` (8 arquivos em 1170×2532 px, fundo preto puro com elementos em tons bege/areia) e oferece duas interfaces:
-
-1. **Style Transfer Tool** — aplica 30 estilos artísticos em imagens enviadas pelo usuário ou selecionadas da base.
-2. **Gerador de Identidade Visual** — cria novas imagens procedurais seguindo estritamente a paleta, proporção e contraste extraídos da base.
-
-Tudo roda no navegador, sem servidor, com processamento em **Web Worker** (RAM estimada < 500 MB).
-
----
-
-## 📋 Índice
-
-- [📸 Capa / Amostra Visual](#-capa--amostra-visual)
-- [📂 Estrutura do Projeto](#-estrutura-do-projeto)
-- [🛠️ Ferramentas](#-ferramentas)
-- [🎯 Identidade Visual Extraída](#-identidade-visual-extraída)
-- [🚀 Como Usar](#-como-usar)
-- [🧪 Tecnologias](#-tecnologias)
-- [📜 Licença](#-licença)
 
 ---
 
@@ -44,20 +21,22 @@ Tudo roda no navegador, sem servidor, com processamento em **Web Worker** (RAM e
 
 <div align="center">
 
-<img src="Awesome-Portrait-Style-Transfer/content/cover.png" alt="Capa do projeto Art Concept" width="600"/>
+![Capa do projeto Art Concept](Awesome-Portrait-Style-Transfer/content/cover.png)
 
-<p><em>Exemplo de fluxo: imagem original (acima) → imagem estilizada (abaixo)</em></p>
+<p><em>Fluxo: imagem original (acima) → imagem estilizada (abaixo)</em></p>
 
 </div>
 
-### Fluxo da ferramenta
+---
 
-```
-┌─────────────────────┐      ┌─────────────────────┐
-│   Imagem Original   │      │  Imagem Estilizada  │
-│   (parte superior)  │   →  │   (parte inferior)  │
-└─────────────────────┘      └─────────────────────┘
-```
+## 📋 Índice
+
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Ferramentas](#ferramentas)
+- [Identidade Visual Extraída](#identidade-visual-extraída)
+- [Como Usar](#como-usar)
+- [Tecnologias](#tecnologias)
+- [Licença](#licença)
 
 ---
 
@@ -65,7 +44,7 @@ Tudo roda no navegador, sem servidor, com processamento em **Web Worker** (RAM e
 
 ```
 art_concept/
-├── .gitignore                  # Ignora base/ e arquivos locais (não versiona as imagens da base)
+├── .gitignore                  # Ignora base/ e arquivos locais (não versiona imagens da base)
 ├── README.md                   # Este arquivo
 ├── IDENTIDADE_VISUAL.md        # Documento técnico da identidade extraída da base
 ├── analisar_base.py            # Script Python/Pillow que analisa cores e dimensões da base
@@ -91,7 +70,7 @@ art_concept/
             └── background-worker.js
 ```
 
-> A pasta `base/` contém as imagens originais de referência. Por decisão do projeto, ela está ignorada no `.gitignore` e **não será enviada para o repositório remoto**.
+> A pasta `base/` contém as imagens originais de referência. Está ignorada no `.gitignore` e **não será enviada para o repositório remoto**.
 
 ---
 
@@ -135,50 +114,25 @@ Cria novas imagens procedurais seguindo a identidade visual extraída da pasta b
 
 Extraída automaticamente das 8 imagens da pasta `base/` via script Python + Pillow.
 
-<div align="center">
-
-<table>
-  <tr>
-    <td><b>Dimensões</b></td>
-    <td>1170 × 2532 px</td>
-  </tr>
-  <tr>
-    <td><b>Proporção</b></td>
-    <td>9:16 (retrato vertical)</td>
-  </tr>
-  <tr>
-    <td><b>Fundo dominante</b></td>
-    <td>`#000000` (preto puro)</td>
-  </tr>
-  <tr>
-    <td><b>Cores de destaque</b></td>
-    <td>`#e5ddd1`, `#e7e0d2`, `#e6ded4`, `#e3d7c5`, `#e2d8c9`</td>
-  </tr>
-  <tr>
-    <td><b>Brilho médio</b></td>
-    <td>90 / 255 (escuro / moody)</td>
-  </tr>
-  <tr>
-    <td><b>Contraste médio</b></td>
-    <td>0.3619 (alto)</td>
-  </tr>
-  <tr>
-    <td><b>Estética</b></td>
-    <td>Minimalista, conceitual, moody</td>
-  </tr>
-</table>
-
-</div>
+| Item | Valor |
+|------|-------|
+| Dimensões | 1170 × 2532 px |
+| Proporção | 9:16 (retrato vertical) |
+| Fundo dominante | `#000000` (preto puro) |
+| Cores de destaque | `#e5ddd1`, `#e7e0d2`, `#e6ded4`, `#e3d7c5`, `#e2d8c9` |
+| Brilho médio | 90 / 255 (escuro / moody) |
+| Contraste médio | 0.3619 (alto) |
+| Estética | Minimalista, conceitual, moody |
 
 **Paleta visual:**
 
 <div align="center">
-  <div style="display:inline-block;width:40px;height:40px;background:#000000;border:1px solid #333;border-radius:6px;margin:2px;"></div>
-  <div style="display:inline-block;width:40px;height:40px;background:#e5ddd1;border:1px solid #333;border-radius:6px;margin:2px;"></div>
-  <div style="display:inline-block;width:40px;height:40px;background:#e7e0d2;border:1px solid #333;border-radius:6px;margin:2px;"></div>
-  <div style="display:inline-block;width:40px;height:40px;background:#e6ded4;border:1px solid #333;border-radius:6px;margin:2px;"></div>
-  <div style="display:inline-block;width:40px;height:40px;background:#e3d7c5;border:1px solid #333;border-radius:6px;margin:2px;"></div>
-  <div style="display:inline-block;width:40px;height:40px;background:#e2d8c9;border:1px solid #333;border-radius:6px;margin:2px;"></div>
+  <span style="display:inline-block;width:32px;height:32px;background:#000000;border:1px solid #333;border-radius:6px;margin:2px;vertical-align:middle;"></span>
+  <span style="display:inline-block;width:32px;height:32px;background:#e5ddd1;border:1px solid #333;border-radius:6px;margin:2px;vertical-align:middle;"></span>
+  <span style="display:inline-block;width:32px;height:32px;background:#e7e0d2;border:1px solid #333;border-radius:6px;margin:2px;vertical-align:middle;"></span>
+  <span style="display:inline-block;width:32px;height:32px;background:#e6ded4;border:1px solid #333;border-radius:6px;margin:2px;vertical-align:middle;"></span>
+  <span style="display:inline-block;width:32px;height:32px;background:#e3d7c5;border:1px solid #333;border-radius:6px;margin:2px;vertical-align:middle;"></span>
+  <span style="display:inline-block;width:32px;height:32px;background:#e2d8c9;border:1px solid #333;border-radius:6px;margin:2px;vertical-align:middle;"></span>
 </div>
 
 Detalhes completos: [`IDENTIDADE_VISUAL.md`](IDENTIDADE_VISUAL.md)
@@ -212,7 +166,7 @@ Não é necessário instalar dependências nem servidor. Abra os arquivos HTML d
 | Camada | Tecnologia | Uso |
 |--------|------------|-----|
 | Frontend | HTML5 + CSS3 | Estrutura e estilização |
-| Animações | [anime.js 3.2.2](https://animejs.com/) | Transições e efeitos visuais |
+| Animações | anime.js 3.2.2 | Transições e efeitos visuais |
 | Processamento | Web Workers | Thread de background (RAM < 500 MB) |
 | Manipulação de imagem | Canvas API | Desenho procedural e exportação PNG |
 | Análise de base | Python 3 + Pillow | Extração de cores e dimensões |
@@ -230,5 +184,3 @@ Distribuído sob a Licença Apache 2.0. Veja o arquivo [`LICENSE`](Awesome-Portr
 **Art Concept** — Ferramentas leves de arte conceitual baseadas em identidade visual extraída.
 
 </div>
-#   a r t _ c o n c e p t  
- 
